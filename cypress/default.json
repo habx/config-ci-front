@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
+  "chromeWebSecurity": false,
+  "experimentalFetchPolyfill": true,
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "reporterEnabled": "mochawesome",
+    "mochawesomeReporterOptions": {
+      "reportDir": "cypress/reports/mocha",
+      "quiet": true,
+      "overwrite": false,
+      "html": false,
+      "json": true
+    }
+  },
+  "retries": 1
+}

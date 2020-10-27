@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "paths": {
+      "@config": ["config"],
+      "@constants": ["constants"],
+
+      "@api": ["api"],
+      "@api/*": ["api/*"],
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+      "@globalTypes": ["globalTypes"],
+      "@globalTypes/*": ["globalTypes/*"],
+      "@helpers": ["helpers"],
+      "@helpers/*": ["helpers/*"],
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"],
+      "@intl": ["intl"],
+      "@intl/*": ["intl/*"],
+      "@lib": ["lib"],
+      "@lib/*": ["lib/*"],
+      "@pages": ["pages"],
+      "@pages/*": ["pages/*"],
+      "@style": ["style"],
+      "@style/*": ["style/*"]
+    },
+    "baseUrl": "../../../../src"
+  }
+}
