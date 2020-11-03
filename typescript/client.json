@@ -1,6 +1,11 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "./default.json",
   "compilerOptions": {
+    "baseUrl": "../../../../src",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "noEmit": true,
     "paths": {
       "@config": ["config"],
       "@constants": ["constants"],
@@ -23,7 +28,6 @@
       "@pages/*": ["pages/*"],
       "@style": ["style"],
       "@style/*": ["style/*"]
-    },
-    "baseUrl": "../../../../src"
+    }
   }
 }
