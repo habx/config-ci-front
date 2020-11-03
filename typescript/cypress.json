@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
-  "extends": "./default.json",
+  "extends": "./client.json",
   "compilerOptions": {
     "isolatedModules": false,
     "types": ["cypress", "@habx/lib-cypress-helpers"]
