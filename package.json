@@ -23,9 +23,9 @@
   },
   "devDependencies": {},
   "optionalDependencies": {
+    "@habx/ui-core": "^3.37.0",
     "@storybook/addon-essentials": "^6.0.28",
     "@storybook/react": "^6.0.28",
-    "@storybook/theming": "^6.0.28",
     "@types/cypress": "^1.1.3",
     "bili": "^5.0.5",
     "react": "^16.8.6",
