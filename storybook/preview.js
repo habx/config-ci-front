@@ -1,14 +1,17 @@
-import { addParameters } from '@storybook/react'
-import { create } from '@storybook/theming'
+import { addDecorator, addParameters } from '@storybook/react'
+
+import { StyleDecorator } from './style'
+
+addDecorator(StyleDecorator)
 
 addParameters({
   info: {},
   layout: 'centered',
   options: {
     sortStoriesByKind: true,
-    theme: create({
+    theme: {
       base: 'light',
       brandTitle: 'Habx'
-    }),
+    },
   },
 })
