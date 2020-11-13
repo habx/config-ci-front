@@ -15,15 +15,15 @@
   "bugs": "https://github.com/habx/config-ci-front/issues",
   "homepage": "https://github.com/habx/config-ci-front#readme",
   "dependencies": {
-    "browserslist": "^4.14.5",
-    "circular-dependency-plugin": "^5.2.0",
+    "browserslist": "^4.14.7",
+    "circular-dependency-plugin": "^5.2.2",
     "lodash": "^4.17.20",
     "terser-webpack-plugin": "^4.2.3",
     "webpack-bundle-analyzer": "^3.9.0"
   },
   "devDependencies": {},
   "optionalDependencies": {
-    "@habx/ui-core": "^3.37.0",
+    "@habx/ui-core": ">=3",
     "@storybook/addon-essentials": "^6.0.28",
     "@storybook/react": "^6.0.28",
     "@types/cypress": "^1.1.3",
