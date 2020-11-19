@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/typedoc",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "hideGenerator": true,
+  "includeVersion": true,
+  "out": "docs",
+  "readme": "none"
+}

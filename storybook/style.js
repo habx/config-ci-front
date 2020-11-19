@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { createGlobalStyle } from 'styled-components'
-import { Provider, ThemeProvider } from '@habx/ui-core'
 
-import { theme } from '@habx/ui-core'
+import { theme, Provider, ThemeProvider } from '@habx/ui-core'
 
 const FONT_ROOT = 'https://cdn.habx.com/assets/fonts'
 
