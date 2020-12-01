@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
-import { theme, Provider, ThemeProvider } from '@habx/ui-core'
+import { theme, Provider, ThemeProvider, DEFAULT_THEME } from '@habx/ui-core'
 
 const FONT_ROOT = 'https://cdn.habx.com/assets/fonts'
 
@@ -83,6 +83,7 @@ export const GlobalStyle = createGlobalStyle`
 export const StyleDecorator = (storyFn) => React.createElement(Provider, {
   children: [React.createElement(ThemeProvider, {
     key: 1,
+    theme: DEFAULT_THEME,
     children: [
       // Somehow, CSS overrides are broken inside Storybook.
       // The following component tries to mitigate the issue by reordering `styled-components` injected CSS stylesheets.
