@@ -1,0 +1,134 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "encrypted": {
+    "npmToken": "ZGTuTXf1p5UE2/GLJZDA7K+CaWqaYU1E6szBC2IhR3/IGscIM3987vTD6cwqJs1ZA0eAl4jt1t7rocRC6y53gD/qMI8b3jUSegKd71Jau6yjj0U9DJTn7n39C6MtM103Zb6pk4I1RVV63fts2GnjtAUmQHnlweV3T5S+ZiEW+uIfJVL1A8mL5diVcdIntDf4vLAKuZVId8pk64ZCC9/EI/dexLymA+jyUO3FFnoA5jLsBvP+l7bWgxSyPqFcy64hCHGXLZyNJAI28THEG15zPBpNYxlB2wGARli7R5FDhi9hrvCr3PeMgKxmjYkKykBT5kbThB74lrEdEWyqiD2qCA=="
+  },
+  "npmrc": "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}\n@habx:registry=https://npm.pkg.github.com/habx",
+  "masterIssue": true,
+  "rangeStrategy": "bump",
+  "separateMinorPatch": true,
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 10,
+  "enabledManagers": [
+    "npm"
+  ],
+  "timezone": "Europe/Paris",
+  "schedule": [
+    "after 10pm and before 7:00am"
+  ],
+  "vulnerabilityAlerts": {
+    "labels": [
+      "security",
+      "dependencies"
+    ],
+    "schedule": [
+      "at any time"
+    ],
+    "prPriority": 10
+  },
+  "packageRules": [
+    {
+      "updateTypes": [
+        "minor",
+        "patch"
+      ],
+      "depTypeList": [
+        "devDependencies"
+      ],
+      "automerge": true,
+      "labels": [
+        "habx-automerge",
+        "dependencies"
+      ]
+    },
+    {
+      "updateTypes": [
+        "patch"
+      ],
+      "depTypeList": [
+        "dependencies",
+        "peerDependencies"
+      ],
+      "automerge": true,
+      "labels": [
+        "habx-automerge",
+        "dependencies"
+      ]
+    },
+    {
+      "packagePatterns": [
+        "^@habx/"
+      ],
+      "schedule": [
+        "at any time"
+      ],
+      "prPriority": 5
+    },
+    {
+      "packagePatterns": [
+        "^@habx/"
+      ],
+      "updateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true,
+      "labels": [
+        "habx-automerge",
+        "dependencies"
+      ]
+    },
+    {
+      "packageNames": [
+        "@habx/lib-client-housing-2d",
+        "@habx/lib-housing-mosaic"
+      ],
+      "groupName": "mosaic changes"
+    },
+    {
+      "packageNames": [
+        "three",
+        "react-scripts"
+      ],
+      "automerge": false,
+      "stabilityDays": 7
+    },
+    {
+      "packageNames": [
+        "lodash",
+        "typescript",
+        "lint-staged"
+      ],
+      "updateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "automerge": true,
+      "prPriority": -5,
+      "labels": [
+        "habx-automerge",
+        "dependencies"
+      ]
+    },
+    {
+      "packagePatterns": [
+        "^@sentry/",
+        "^@types/"
+      ],
+      "updateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true,
+      "prPriority": -10,
+      "labels": [
+        "habx-automerge",
+        "dependencies"
+      ]
+    }
+  ]
+}
