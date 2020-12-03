@@ -10,7 +10,7 @@ alias:
   # https://circleci.com/docs/2.0/circleci-images/#nodejs
   - &docker_node14_configuration
     docker:
-      - image: circleci/node:14.13.1
+      - image: circleci/node:14.15.1
         user: root
   - &docker_buildpack_deps_configuration
     docker:
