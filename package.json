@@ -44,7 +44,7 @@
     "circular-dependency-plugin": "^5.0",
     "react": "^16.8",
     "react-dom": "^16.8",
-    "rollup-plugin-analyzer": "^3.0",
+    "rollup-plugin-analyzer": "^3.3",
     "rollup-plugin-typescript2": "^0.29",
     "styled-components": "^5.0",
     "terser-webpack-plugin": "^4.0",
