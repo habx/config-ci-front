@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@habx/ui-core": "^5.3.1",
-    "@storybook/addon-essentials": "^6.1.0",
-    "@storybook/react": "^6.1.0",
+    "@storybook/addon-essentials": "^6.1.10",
+    "@storybook/react": "^6.1.10",
     "bili": "^5.0.5",
     "browserslist": "^4.14.7",
     "circular-dependency-plugin": "^5.2.2",
