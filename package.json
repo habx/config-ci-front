@@ -15,6 +15,12 @@
   "bugs": "https://github.com/habx/config-ci-front/issues",
   "homepage": "https://github.com/habx/config-ci-front#readme",
   "dependencies": {
+    "@habx/eslint-plugin-graphql-multi-endpoints": "^1.1.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-graphql": "^4.0.0",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "lodash": "*"
   },
   "devDependencies": {
@@ -50,8 +56,8 @@
     "terser-webpack-plugin": "^4.2",
     "typedoc": "^0.20.23",
     "typescript": "^3.9 || ^4.0",
-    "webpack-bundle-analyzer": ">=3",
-    "webpack": "^4.44"
+    "webpack": "^4.44",
+    "webpack-bundle-analyzer": ">=3"
   },
   "peerDependenciesMeta": {
     "@habx/ui-core": {
