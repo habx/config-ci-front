@@ -50,8 +50,8 @@
     "terser-webpack-plugin": "^4.2",
     "typedoc": "^0.20.23",
     "typescript": "^3.9 || ^4.0",
-    "webpack-bundle-analyzer": ">=3",
-    "webpack": "^4.44"
+    "webpack": "^4.44",
+    "webpack-bundle-analyzer": ">=3"
   },
   "peerDependenciesMeta": {
     "@habx/ui-core": {
