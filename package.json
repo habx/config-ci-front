@@ -24,8 +24,8 @@
     "bili": "^5.0.5",
     "browserslist": "^4.14.7",
     "circular-dependency-plugin": "^5.2.2",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "rollup-plugin-analyzer": "^3.3.0",
     "rollup-plugin-typescript2": "^0.29.0",
     "styled-components": "^5.2.1",
@@ -42,16 +42,16 @@
     "bili": "^5.0",
     "browserslist": "^4.14.7",
     "circular-dependency-plugin": "^5.0",
-    "react": "^16.8",
-    "react-dom": "^16.8",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "rollup-plugin-analyzer": "^3.0",
     "rollup-plugin-typescript2": "^0.29",
     "styled-components": "^5.0",
     "terser-webpack-plugin": "^4.0",
     "typedoc": "^0.20.0-beta.8",
     "typescript": "^3.9 || ^4.0",
-    "webpack-bundle-analyzer": ">=3",
-    "webpack": "^4.44"
+    "webpack": "^4.44",
+    "webpack-bundle-analyzer": ">=3"
   },
   "peerDependenciesMeta": {
     "@habx/ui-core": {
