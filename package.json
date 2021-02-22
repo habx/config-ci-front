@@ -18,7 +18,7 @@
     "lodash": "*"
   },
   "devDependencies": {
-    "@habx/ui-core": "^5.20.0",
+    "@habx/ui-core": "^5.20.1",
     "@storybook/addon-essentials": "^6.1.18",
     "@storybook/react": "^6.1.18",
     "bili": "^5.0.5",
@@ -36,7 +36,7 @@
     "webpack-bundle-analyzer": "^4.4.0"
   },
   "peerDependencies": {
-    "@habx/ui-core": ">=5.20.0",
+    "@habx/ui-core": ">=5.20.1",
     "@storybook/addon-essentials": "^6.1",
     "@storybook/react": "^6.1",
     "bili": "^5.0",
