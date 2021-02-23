@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@habx/ui-core": "^5.20.1",
-    "@storybook/addon-essentials": "^6.1.18",
+    "@storybook/addon-essentials": "^6.1.19",
     "@storybook/react": "^6.1.19",
     "bili": "^5.0.5",
     "browserslist": "^4.16.3",
