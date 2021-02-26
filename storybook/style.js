@@ -5,7 +5,7 @@ const { theme, Provider, ThemeProvider, DEFAULT_THEME } = require('@habx/ui-core
 
 const FONT_ROOT = 'https://cdn.habx.com/assets/fonts'
 
-module.exports.GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
@@ -80,7 +80,7 @@ module.exports.GlobalStyle = createGlobalStyle`
   }
 `
 
-module.exports.StyleDecorator = (storyFn) => React.createElement(Provider, {
+const StyleDecorator = (storyFn) => React.createElement(Provider, {
   children: [React.createElement(ThemeProvider, {
     key: 1,
     theme: DEFAULT_THEME,
@@ -107,3 +107,5 @@ module.exports.StyleDecorator = (storyFn) => React.createElement(Provider, {
 })
 
 let ordered = false
+
+module.exports = { StyleDecorator, Provider }
