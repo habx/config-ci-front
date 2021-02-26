@@ -3,6 +3,6 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/lib/', '<rootDir>/dist'],
   testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx)$',
   transform: {
-    '.(ts|tsx)': 'ts-jest',
+    '.(ts|tsx|js)': 'ts-jest',
   },
 }
