@@ -1,6 +1,6 @@
-import { addDecorator, addParameters } from '@storybook/react'
+const { addDecorator, addParameters } = require('@storybook/react')
 
-import { StyleDecorator } from './style'
+const { StyleDecorator } = require('./style')
 
 addDecorator(StyleDecorator)
 
