@@ -36,7 +36,7 @@
     "webpack-bundle-analyzer": "^4.4.0"
   },
   "peerDependencies": {
-    "@habx/ui-core": "^5.1",
+    "@habx/ui-core": "^5.22",
     "@storybook/addon-essentials": "^6.1",
     "@storybook/react": "^6.1",
     "bili": "^5.0",
