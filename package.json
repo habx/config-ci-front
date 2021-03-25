@@ -18,7 +18,7 @@
     "lodash": "*"
   },
   "devDependencies": {
-    "@habx/ui-core": "^5.23.4",
+    "@habx/ui-core": "^5.23.5",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/react": "^6.1.21",
     "bili": "^5.0.5",
