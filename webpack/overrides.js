@@ -1,4 +1,4 @@
-const { merge } = require('lodash')
+const { merge, remove } = require('lodash')
 
 const helpers = require('../helpers')
 const customConfig = require('./webpack.config')
@@ -36,6 +36,10 @@ module.exports = (defaultConfig) => {
   if (process.env.BUNDLEWATCH) {
     config.output.filename = 'main.js'
     config.output.chunkFilename = '[name].[id].js'
+  }
+
+  if (process.env.IGNORE_LINT) {
+    remove(config.plugins, (plugin) => plugin.constructor.name === 'ESLintWebpackPlugin')
   }
 
   if (helpers.exists(
