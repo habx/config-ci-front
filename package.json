@@ -33,7 +33,7 @@
     "typedoc": "^0.20.35",
     "typescript": "^4.2.4",
     "webpack": "^4.46.0",
-    "webpack-bundle-analyzer": "^4.4.0"
+    "webpack-bundle-analyzer": "^4.4.1"
   },
   "peerDependencies": {
     "@habx/ui-core": "^5.30",
@@ -51,7 +51,7 @@
     "typedoc": "^0.20.35",
     "typescript": "^3.9 || ^4.0",
     "webpack": "^4.46.0",
-    "webpack-bundle-analyzer": "^4.4.0"
+    "webpack-bundle-analyzer": "^4.4.1"
   },
   "peerDependenciesMeta": {
     "@habx/ui-core": {
