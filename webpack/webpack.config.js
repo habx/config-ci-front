@@ -6,6 +6,14 @@ const mapToFolder = (dependencies, folder) =>
     ...acc,
   }), {})
 
+const getLinkedDependencies = () => {
+  try {
+    return require(path.resolve('./linked-deps.json'))
+  } catch {
+    return []
+  }
+}
+
 module.exports = {
   resolve: {
     alias: {
@@ -30,6 +38,7 @@ module.exports = {
           'react-final-form',
           'react-intl',
           'react-beautiful-dnd',
+          ...getLinkedDependencies()
         ],
         './node_modules'
       ),
