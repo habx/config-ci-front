@@ -1,6 +1,8 @@
 module.exports = {
   production: [
     '>0.2%',
+    'not IE 11',
+    'not safari 8',
     'not dead',
     'not op_mini all'
   ],
