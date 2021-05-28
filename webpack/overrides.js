@@ -51,6 +51,7 @@ module.exports = (defaultConfig) => {
     config.optimization.minimizer = [
       new TerserPlugin({
         terserOptions: {
+          keep_fnames: /Float32Array/, // Fix for GLTF DRACOLoader on older Safari versions
           parse: {
             ecma: 8,
           },
