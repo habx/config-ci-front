@@ -7,7 +7,11 @@ const config = {
     '.(ts|tsx|js)': 'ts-jest',
   },
 }
+
 if (process.env.CI) {
+  // Avoid using more than Circle CI max workers
+  // (only 2 CPUs allowed in our configuration)
   config.maxWorkers = 2
 }
+
 module.exports = config
