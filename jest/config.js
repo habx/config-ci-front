@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   testEnvironment: "jsdom",
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/lib/', '<rootDir>/dist'],
@@ -6,5 +6,8 @@ module.exports = {
   transform: {
     '.(ts|tsx|js)': 'ts-jest',
   },
-  maxWorkers: process.env.CI ? 2 : "100%"
 }
+if (process.env.CI) {
+  config.maxWorkers = 2
+}
+module.exports = config
