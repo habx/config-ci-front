@@ -6,4 +6,5 @@ module.exports = {
   transform: {
     '.(ts|tsx|js)': 'ts-jest',
   },
+  maxWorkers: process.env.CI ? 2 : undefined
 }
