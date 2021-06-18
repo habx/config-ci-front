@@ -48,8 +48,6 @@
     "rollup-plugin-typescript2": "^0.30",
     "styled-components": "^5.3",
     "terser-webpack-plugin": "^4.2",
-    "typedoc": "^0.20.36",
-    "typescript": "^3.9 || ^4.0",
     "webpack": "^4.46.0",
     "webpack-bundle-analyzer": "^4.4.2"
   },
