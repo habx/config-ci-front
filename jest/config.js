@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   testEnvironment: "jsdom",
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/lib/', '<rootDir>/dist'],
@@ -7,3 +7,11 @@ module.exports = {
     '.(ts|tsx|js)': 'ts-jest',
   },
 }
+
+if (process.env.CI) {
+  // Avoid using more than Circle CI max workers
+  // (only 2 CPUs allowed in our configuration)
+  config.maxWorkers = 2
+}
+
+module.exports = config
