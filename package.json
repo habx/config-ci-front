@@ -2,7 +2,9 @@
   "name": "@habx/config-ci-front",
   "version": "0.15.0",
   "description": "Configurations files for frontend repositories",
-  "scripts": {},
+  "scripts": {
+    "build": "echo all good"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/habx/config-ci-front.git"
