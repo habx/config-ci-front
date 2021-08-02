@@ -1,10 +1,15 @@
 const { merge, remove } = require('lodash')
+const webpack = require('webpack')
 
 const helpers = require('../helpers')
 const customConfig = require('./webpack.config')
 
 module.exports = (defaultConfig) => {
   let config = merge({}, defaultConfig, customConfig)
+
+  config.plugins.unshift(new webpack.DefinePlugin({
+    __DEV__: JSON.stringify(process.env.NODE_ENV !== "production"),
+  }))
 
   if (helpers.exists(
     'circular-dependency-plugin',
