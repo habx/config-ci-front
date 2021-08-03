@@ -20,7 +20,7 @@
     "lodash": "*"
   },
   "devDependencies": {
-    "@habx/ui-core": "^5.43.0",
+    "@habx/ui-core": "^5.43.1",
     "@storybook/addon-essentials": "^6.3.6",
     "@storybook/react": "^6.3.6",
     "bili": "^5.0.5",
