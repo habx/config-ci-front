@@ -32,7 +32,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "styled-components": "^5.3.1",
     "terser-webpack-plugin": "^4.2.3",
-    "typedoc": "^0.21.9",
+    "typedoc": "^0.22.0",
     "typescript": "^4.4.2",
     "webpack": "^4.46.0",
     "webpack-bundle-analyzer": "^4.4.2"
@@ -50,7 +50,7 @@
     "rollup-plugin-typescript2": "0.30.x",
     "styled-components": ">=5.3 <6",
     "terser-webpack-plugin": ">=4.2 <5",
-    "typedoc": "0.21.x",
+    "typedoc": "0.22.x",
     "typescript": ">=4.3 <5",
     "webpack": ">=4.46 <5",
     "webpack-bundle-analyzer": ">=4.44 < 5"
