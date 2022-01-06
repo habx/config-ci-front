@@ -3,6 +3,7 @@
   "extends": "./client.json",
   "compilerOptions": {
     "isolatedModules": false,
+    "target": "ES2019",
     "types": ["cypress", "@habx/lib-cypress-helpers"]
   }
 }
