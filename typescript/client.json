@@ -2,12 +2,11 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./default.json",
   "compilerOptions": {
-    "baseUrl": "../../../../src",
     "isolatedModules": true,
     "jsx": "react-jsx",
     "noEmit": true,
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["./*"]
     },
     "target": "ESNext",
     "types": ["vite/client"]

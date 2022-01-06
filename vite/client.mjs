@@ -1,17 +1,19 @@
-const path = require('path')
+import { resolve } from 'path'
+import { cwd, env } from 'process'
+import { defineConfig } from 'vite'
+import { readFileSync } from 'fs'
 
-const vite = require('vite')
-const legacy = require('@vitejs/plugin-legacy')
-const react = require('@vitejs/plugin-react')
+import legacy from '@vitejs/plugin-legacy'
+import react from '@vitejs/plugin-react'
 
-const browserslist = require('../browserslist')
+import browserslist from '../browserslist.js'
 
-module.exports = vite.defineConfig((params) => {
-  var define = {
+export default defineConfig((params) => {
+  const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
   }
 
-  var dedupe = [
+  const dedupe = [
     '@apollo/client',
     'final-form',
     'react',
@@ -24,7 +26,7 @@ module.exports = vite.defineConfig((params) => {
     'styled-components',
   ]
 
-  var plugins = [
+  const plugins = [
     react(),
   ]
 
@@ -34,7 +36,7 @@ module.exports = vite.defineConfig((params) => {
       define['window.HABX_VERSION'] = "'local'"
 
       try {
-        JSON.parse(readFileSync(('./linked-deps.json'))).forEach(dependency =>
+        JSON.parse(readFileSync(resolve(cwd(), 'linked-deps.json'))).forEach(dependency =>
           dedupe.push(dependency))
       } catch {}
 
@@ -50,7 +52,7 @@ module.exports = vite.defineConfig((params) => {
   }
 
   return {
-    base: process.env.PUBLIC_URL,
+    base: env.PUBLIC_URL,
     build: {
       outDir: 'build',
       terserOptions: {
@@ -61,7 +63,7 @@ module.exports = vite.defineConfig((params) => {
     plugins,
     resolve: {
       alias: {
-        '@' : path.resolve(__dirname, './src'),
+        '@' : resolve(cwd(), 'src'),
         'querystring': 'qs',
         'polygon-clipping': 'polygon-clipping/dist/polygon-clipping.cjs.js',
       },
