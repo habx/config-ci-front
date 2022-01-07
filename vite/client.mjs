@@ -1,21 +1,21 @@
 import { resolve } from 'path'
-import { cwd, env } from 'process'
+import { cwd } from 'process'
 import { defineConfig } from 'vite'
-import dotenv from "dotenv"
 import { readFileSync } from 'fs'
 import { default as checker } from 'vite-plugin-checker'
+import { loadEnv } from 'vite'
 
 import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react'
 
 import browserslist from '../browserslist.js'
 
-dotenv.config()
 
 export default defineConfig((params) => {
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
   }
+  const env = loadEnv(params.mode, process.cwd())
 
   const dedupe = [
     '@apollo/client',
@@ -38,7 +38,7 @@ export default defineConfig((params) => {
         files: ['./src'],
         extensions: ['.ts', '.tsx'],
       },
-      overlay: process.env.CHECKER_OVERLAY !== 'false',
+      overlay: env.VITE_CHECKER_OVERLAY !== 'false',
       enableBuild: false
     })
 ]
