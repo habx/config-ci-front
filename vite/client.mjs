@@ -32,16 +32,21 @@ export default defineConfig((params) => {
 
   const plugins = [
     react(),
-    checker.default({
-      typescript: true,
-      eslint: {
-        files: ['./src'],
-        extensions: ['.ts', '.tsx'],
-      },
-      overlay: env.VITE_CHECKER_OVERLAY !== 'false',
-      enableBuild: false
-    })
-]
+  ]
+
+  if (env.VITE_CHECKER_ENABLED === 'true') {
+    plugins.push(
+      checker.default({
+        typescript: true,
+        eslint: {
+          files: ['./src'],
+          extensions: ['.ts', '.tsx'],
+        },
+        overlay: env.VITE_CHECKER_OVERLAY !== 'false',
+        enableBuild: false
+      })
+    )
+  }
 
   switch (params.mode) {
     case 'development':
