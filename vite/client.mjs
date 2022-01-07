@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { cwd } from 'process'
+import { cwd, env } from 'process'
 import { defineConfig } from 'vite'
 import { readFileSync } from 'fs'
 import { default as checker } from 'vite-plugin-checker'
@@ -15,7 +15,7 @@ export default defineConfig((params) => {
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
   }
-  const env = loadEnv(params.mode, process.cwd())
+  const viteEnv = loadEnv(params.mode, process.cwd())
 
   const dedupe = [
     '@apollo/client',
@@ -34,7 +34,7 @@ export default defineConfig((params) => {
     react(),
   ]
 
-  if (env.VITE_CHECKER_ENABLED === 'true') {
+  if (viteEnv.VITE_CHECKER_ENABLED === 'true') {
     plugins.push(
       checker.default({
         typescript: true,
@@ -42,7 +42,7 @@ export default defineConfig((params) => {
           files: ['./src'],
           extensions: ['.ts', '.tsx'],
         },
-        overlay: env.VITE_CHECKER_OVERLAY !== 'false',
+        overlay: viteEnv.VITE_CHECKER_OVERLAY !== 'false',
         enableBuild: false
       })
     )
