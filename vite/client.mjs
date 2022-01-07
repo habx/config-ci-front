@@ -15,7 +15,7 @@ export default defineConfig((params) => {
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
   }
-  const viteEnv = loadEnv(params.mode, process.cwd())
+  const viteEnv = loadEnv(params.mode, process.cwd(), '')
 
   const dedupe = [
     '@apollo/client',
@@ -34,7 +34,7 @@ export default defineConfig((params) => {
     react(),
   ]
 
-  if (viteEnv.VITE_CHECKER_ENABLED === 'true') {
+  if (viteEnv.CHECKER_ENABLED === 'true') {
     plugins.push(
       checker.default({
         typescript: true,
@@ -42,7 +42,7 @@ export default defineConfig((params) => {
           files: ['./src'],
           extensions: ['.ts', '.tsx'],
         },
-        overlay: viteEnv.VITE_CHECKER_OVERLAY !== 'false',
+        overlay: viteEnv.CHECKER_OVERLAY !== 'false',
         enableBuild: false
       })
     )
