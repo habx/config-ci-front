@@ -17,7 +17,9 @@
   "bugs": "https://github.com/habx/config-ci-front/issues",
   "homepage": "https://github.com/habx/config-ci-front#readme",
   "dependencies": {
-    "lodash": "*"
+    "dotenv": "^10.0.0",
+    "lodash": "*",
+    "vite-plugin-checker": "^0.3.4"
   },
   "devDependencies": {
     "@habx/ui-core": "^5.55.0",
@@ -28,6 +30,7 @@
     "bili": "^5.0.5",
     "browserslist": "^4.19.1",
     "circular-dependency-plugin": "^5.2.2",
+    "eslint": "^8.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rollup-plugin-analyzer": "^4.0.0",
