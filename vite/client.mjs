@@ -16,7 +16,6 @@ export default defineConfig((params) => {
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
   }
-  console.log(process.env, params)
 
   const dedupe = [
     '@apollo/client',
