@@ -2,7 +2,6 @@ import { resolve } from 'path'
 import { cwd, env } from 'process'
 import { defineConfig } from 'vite'
 import { readFileSync } from 'fs'
-import { default as checker } from 'vite-plugin-checker'
 import { loadEnv } from 'vite'
 
 import legacy from '@vitejs/plugin-legacy'
@@ -35,6 +34,8 @@ export default defineConfig((params) => {
   ]
 
   if (viteEnv.CHECKER_ENABLED === 'true') {
+    const import { default as checker } from 'vite-plugin-checker'
+
     plugins.push(
       checker.default({
         typescript: true,
