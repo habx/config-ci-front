@@ -35,7 +35,8 @@
     "styled-components": "^5.3.3",
     "typedoc": "^0.22.10",
     "typescript": "^4.5.4",
-    "vite": "^2.7.10"
+    "vite": "^2.7.10",
+    "vite-plugin-checker": "^0.3.4"
   },
   "peerDependencies": {
     "@habx/ui-core": ">=5.38 <6",
@@ -51,7 +52,8 @@
     "styled-components": ">=5.3 <6",
     "typedoc": ">=0.21 <1",
     "typescript": ">=4.3 <5",
-    "vite": ">=v2.7.10 <3"
+    "vite": ">=v2.7.10 <3",
+    "vite-plugin-checker": "^0.3.4"
   },
   "peerDependenciesMeta": {
     "@habx/ui-core": {
@@ -97,6 +99,9 @@
       "optional": true
     },
     "vite": {
+      "optional": true
+    },
+    "vite-plugin-checker": {
       "optional": true
     }
   }

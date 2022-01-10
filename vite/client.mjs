@@ -2,16 +2,19 @@ import { resolve } from 'path'
 import { cwd, env } from 'process'
 import { defineConfig } from 'vite'
 import { readFileSync } from 'fs'
+import { loadEnv } from 'vite'
 
 import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react'
 
 import browserslist from '../browserslist.js'
 
-export default defineConfig((params) => {
+
+export default defineConfig(async (params) => {
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
   }
+  const viteEnv = loadEnv(params.mode, process.cwd(), '')
 
   const dedupe = [
     '@apollo/client',
@@ -29,6 +32,22 @@ export default defineConfig((params) => {
   const plugins = [
     react(),
   ]
+
+  if (viteEnv.CHECKER_ENABLED === 'true') {
+    const { default: checker } = await import('vite-plugin-checker')
+
+    plugins.push(
+      checker.default({
+        typescript: true,
+        eslint: {
+          files: ['./src'],
+          extensions: ['.ts', '.tsx'],
+        },
+        overlay: viteEnv.CHECKER_OVERLAY !== 'false',
+        enableBuild: false
+      })
+    )
+  }
 
   switch (params.mode) {
     case 'development':
