@@ -10,7 +10,7 @@ import react from '@vitejs/plugin-react'
 import browserslist from '../browserslist.js'
 
 
-export default defineConfig((params) => {
+export default defineConfig(async (params) => {
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
   }
@@ -34,7 +34,7 @@ export default defineConfig((params) => {
   ]
 
   if (viteEnv.CHECKER_ENABLED === 'true') {
-    const import { default as checker } from 'vite-plugin-checker'
+    const { default: checker } = await import('vite-plugin-checker')
 
     plugins.push(
       checker.default({
