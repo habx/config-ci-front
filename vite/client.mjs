@@ -74,6 +74,7 @@ export default defineConfig(async (params) => {
     base: env.PUBLIC_URL,
     build: {
       outDir: 'build',
+      sourcemap: params.mode === 'production',
       terserOptions: {
         keep_fnames: /Float32Array/, // Fix for GLTF DRACOLoader on older Safari versions
       },
