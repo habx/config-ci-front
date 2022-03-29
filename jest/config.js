@@ -6,6 +6,7 @@ const config = {
   transform: {
     '.(ts|tsx|js)': 'ts-jest',
   },
+  collectCoverageFrom: ['src/**/*.{js,jsx,ts}'],
 }
 
 if (process.env.CI) {
