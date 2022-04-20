@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { createGlobalStyle } from 'styled-components'
+const React = require('react')
+const { createGlobalStyle } =  require('styled-components')
 
-import { theme, Provider, ThemeProvider, DEFAULT_THEME } from '@habx/ui-core'
+const { theme, Provider, ThemeProvider, DEFAULT_THEME } = require('@habx/ui-core')
 
 const FONT_ROOT = 'https://cdn.habx.com/assets/fonts'
 
@@ -80,11 +80,33 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const StyleDecorator = ({ children }) =>
-  <Provider>
-    <ThemeProvider theme={DEFAULT_THEME}>
-      <GlobalStyle/>
-      {children}
-    </ThemeProvider>
-  </Provider>
+const StyleDecorator = (storyFn) => React.createElement(Provider, {
+  children: [React.createElement(ThemeProvider, {
+    key: 1,
+    theme: DEFAULT_THEME,
+    children: [
+      // Somehow, CSS overrides are broken inside Storybook.
+      // The following component tries to mitigate the issue by reordering `styled-components` injected CSS stylesheets.
+      React.createElement(() => {
+        if (!ordered) {
+          const head = document.head
+          const style = head.querySelector('style[data-styled]')
+
+          if (style) {
+            head.appendChild(head.removeChild(style))
+            ordered = true
+          }
+        }
+
+        return null
+      }, { key: 1 }),
+      React.createElement(GlobalStyle, { key: 2 }),
+      React.createElement(storyFn, { key: 3 }),
+    ]
+  })]
+})
+
+let ordered = false
+
+module.exports = { StyleDecorator, Provider }
 
