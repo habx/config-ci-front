@@ -7,6 +7,7 @@ const config = {
     '.(ts|tsx|js)': 'ts-jest',
   },
   collectCoverageFrom: ['src/**/*.{js,jsx,ts}'],
+  reporters: ['default', ['jest-junit', { suiteName: 'jest tests' }]],
 }
 
 if (process.env.CI) {
