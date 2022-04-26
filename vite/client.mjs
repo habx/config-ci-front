@@ -33,6 +33,7 @@ export default defineConfig(async (params) => {
     react(),
   ]
 
+
   if (viteEnv.CHECKER_ENABLED === 'true') {
     const { default: checker } = await import('vite-plugin-checker')
 
@@ -70,10 +71,23 @@ export default defineConfig(async (params) => {
       break
   }
 
+  if (viteEnv.ANALYZE) {
+    const { visualizer } = await import('rollup-plugin-visualizer')
+    plugins.push(visualizer({ open: true, filename: 'build/stats.html' }))
+  }
+
   return {
     base: env.PUBLIC_URL,
     build: {
       outDir: 'build',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            lodash: ['lodash'],
+            three: ['three']
+          }
+        }
+      },
       sourcemap: params.mode === 'production',
       terserOptions: {
         keep_fnames: /Float32Array/, // Fix for GLTF DRACOLoader on older Safari versions
