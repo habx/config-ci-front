@@ -84,7 +84,6 @@ export default defineConfig(async (params) => {
         output: {
           manualChunks: {
             lodash: ['lodash'],
-            three: ['three']
           }
         }
       },
