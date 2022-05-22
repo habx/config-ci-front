@@ -21,7 +21,7 @@
     "lodash": "*"
   },
   "devDependencies": {
-    "@habx/ui-core": "^6.0.0",
+    "@habx/ui-core": "^6.1.0",
     "@storybook/addon-essentials": "^6.5.3",
     "@storybook/react": "^6.5.3",
     "@vitejs/plugin-legacy": "^1.8.2",
