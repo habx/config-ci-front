@@ -99,6 +99,7 @@ export default defineConfig(async (params) => {
         '@' : resolve(cwd(), 'src'),
         'querystring': 'qs',
         'polygon-clipping': 'polygon-clipping/dist/polygon-clipping.cjs.js',
+        'loadash': 'lodash-es'
       },
       dedupe,
     },

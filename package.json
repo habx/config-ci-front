@@ -18,7 +18,7 @@
   "homepage": "https://github.com/habx/config-ci-front#readme",
   "dependencies": {
     "browserlist": "^1.0.1",
-    "lodash": "*"
+    "lodash-es": "*"
   },
   "devDependencies": {
     "@habx/ui-core": "^6.6.1",
