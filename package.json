@@ -1,6 +1,6 @@
 {
   "name": "@habx/config-ci-front",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "Configurations files for frontend repositories",
   "scripts": {
     "build": "echo all good ; mkdir dist"
