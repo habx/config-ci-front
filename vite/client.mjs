@@ -88,9 +88,6 @@ export default defineConfig(async (params) => {
         }
       },
       sourcemap: params.mode === 'production',
-      terserOptions: {
-        keep_fnames: /Float32Array/, // Fix for GLTF DRACOLoader on older Safari versions
-      },
     },
     define,
     plugins,
