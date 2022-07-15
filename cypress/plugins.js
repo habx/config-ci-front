@@ -1,4 +1,4 @@
-const { merge } = require('lodash')
+const { merge } = require('lodash-es')
 const common = require('./default.json')
 
 module.exports = (_on, config) => {
