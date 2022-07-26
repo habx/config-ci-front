@@ -66,10 +66,12 @@ export default defineConfig(async (params) => {
       break
 
     case 'production':
-      plugins.push(legacy({
-        ignoreBrowserslistConfig: true,
-        targets: browserslist.production,
-      }))
+      if (viteEnv.DISABLE_LEGACY_PLUGIN) {
+        plugins.push(legacy({
+          ignoreBrowserslistConfig: true,
+          targets: browserslist.production,
+        }))
+      }
 
       break
   }
