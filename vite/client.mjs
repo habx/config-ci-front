@@ -4,7 +4,6 @@ import { defineConfig } from 'vite'
 import { readFileSync } from 'fs'
 import { loadEnv } from 'vite'
 
-import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react'
 
 import browserslist from '../browserslist.js'
@@ -66,10 +65,17 @@ export default defineConfig(async (params) => {
       break
 
     case 'production':
-      plugins.push(legacy({
-        ignoreBrowserslistConfig: true,
-        targets: browserslist.production,
-      }))
+      if (viteEnv.DISABLE_LEGACY_PLUGIN) {
+        try {
+          const { default: legacy } = await import('@vitejs/plugin-legacy')
+          plugins.push(legacy({
+            ignoreBrowserslistConfig: true,
+            targets: browserslist.production,
+          }))
+        } catch {
+          // Silent catch
+        }
+      }
 
       break
   }
