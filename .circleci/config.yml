@@ -141,7 +141,7 @@ orbs:
 # -------------- DEFINE YOUR WORKFLOW --------------- #
 # --------------------------------------------------- #
 workflows:
-  build:
+  tests:
     jobs:
       - npmjs-publish:
           context: ts-lib-client-public
