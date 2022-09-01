@@ -65,7 +65,7 @@ export default defineConfig(async (params) => {
       break
 
     case 'production':
-      if (viteEnv.DISABLE_LEGACY_PLUGIN) {
+      if (viteEnv.DISABLE_LEGACY_PLUGIN !== 'true') {
         try {
           const { default: legacy } = await import('@vitejs/plugin-legacy')
           plugins.push(legacy({
@@ -80,7 +80,7 @@ export default defineConfig(async (params) => {
       break
   }
 
-  if (viteEnv.ANALYZE) {
+  if (viteEnv.ANALYZE === 'true') {
     const { visualizer } = await import('rollup-plugin-visualizer')
 
     plugins.push(visualizer({ filename: 'build/stats.html', open: true }))

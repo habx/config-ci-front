@@ -1,6 +1,6 @@
 {
   "name": "@habx/config-ci-front",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "Configurations files for frontend repositories",
   "scripts": {
     "build": "echo all good ; mkdir dist"
@@ -20,23 +20,23 @@
     "lodash-es": "*"
   },
   "devDependencies": {
-    "@habx/ui-core": "^6.6.1",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/react": "^6.5.9",
-    "@vitejs/plugin-legacy": "^2.0.0",
-    "@vitejs/plugin-react": "^2.0.0",
+    "@habx/ui-core": "^6.11.0",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@vitejs/plugin-legacy": "^2.0.1",
+    "@vitejs/plugin-react": "^2.0.1",
     "bili": "^5.0.5",
-    "browserslist": "^4.21.2",
+    "browserslist": "^4.21.3",
     "circular-dependency-plugin": "^5.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup-plugin-typescript2": "^0.32.1",
-    "rollup-plugin-visualizer": "^5.7.1",
+    "rollup-plugin-typescript2": "^0.33.0",
+    "rollup-plugin-visualizer": "^5.8.0",
     "styled-components": "^5.3.5",
-    "terser": "^5.14.2",
-    "typedoc": "^0.23.8",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.2",
+    "terser": "^5.15.0",
+    "typedoc": "^0.23.11",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
     "vite-plugin-checker": "^0.4.3"
   },
   "peerDependencies": {
@@ -51,7 +51,7 @@
     "rollup-plugin-typescript2": ">=0.30 <1",
     "rollup-plugin-visualizer": "5.x",
     "styled-components": ">=5.3 <6",
-    "terser": ">=5.14.2",
+    "terser": ">=5.15.0",
     "typedoc": ">=0.21 <1",
     "typescript": ">=4.3 <5",
     "vite": ">=v2.7.10 <4",
