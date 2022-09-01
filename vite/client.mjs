@@ -86,6 +86,18 @@ export default defineConfig(async (params) => {
     plugins.push(visualizer({ filename: 'build/stats.html', open: true }))
   }
 
+  if (viteEnv.BUILD_VERSION) {
+    plugins.push({
+      name: 'version-in-meta',
+      transformIndexHtml(html) {
+        return html.replace(
+          '<head>',
+          `<head>\n    <meta value="habxVersion" version="${viteEnv.BUILD_VERSION}" />`
+        )
+    }
+    })
+  }
+
   return {
     base: env.PUBLIC_URL,
     build: {
