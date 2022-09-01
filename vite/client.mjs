@@ -92,7 +92,7 @@ export default defineConfig(async (params) => {
       transformIndexHtml(html) {
         return html.replace(
           '<head>',
-          `<head>\n    <meta value="habxVersion" version="${viteEnv.BUILD_VERSION}" />`
+          `<head>\n    <meta name="habxVersion" value="${viteEnv.BUILD_VERSION}" />`
         )
     }
     })
