@@ -1,7 +1,7 @@
 const config = {
   testEnvironment: "jsdom",
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
-  testPathIgnorePatterns: ['/node_modules/', '<rootDir>/lib/', '<rootDir>/dist'],
+  testPathIgnorePatterns: ['/node_modules/', '<rootDir>/lib/', '<rootDir>/dist', '<rootDir>/cypress'],
   testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx)$',
   transform: {
     '.(ts|tsx|js)': 'ts-jest',
