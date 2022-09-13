@@ -10,11 +10,13 @@ import browserslist from '../browserslist.js'
 
 
 export default defineConfig(async (params) => {
+  const viteEnv = loadEnv(params.mode, process.cwd(), '')
+
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
+    'import.meta.env.VERSION_BUILD_INFOS': JSON.stringify(viteEnv.VERSION_BUILD_INFOS),
   }
 
-  const viteEnv = loadEnv(params.mode, process.cwd(), '')
 
   const dedupe = [
     '@apollo/client',
@@ -39,7 +41,7 @@ export default defineConfig(async (params) => {
   switch (params.mode) {
     case 'development':
       define['window.HABX_ENV'] = "'local'"
-      define['window.HABX_VERSION'] = "'local'"
+      define['window.VERSION'] = "'local'"
 
       try {
         JSON.parse(readFileSync(resolve(cwd(), 'linked-deps.json'))).forEach(dependency =>
