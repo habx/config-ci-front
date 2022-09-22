@@ -26,7 +26,7 @@
     "@vitejs/plugin-legacy": "^2.1.0",
     "@vitejs/plugin-react": "^2.1.0",
     "bili": "^5.0.5",
-    "browserslist": "^4.21.3",
+    "browserslist": "^4.21.4",
     "circular-dependency-plugin": "^5.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
