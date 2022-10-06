@@ -36,7 +36,7 @@ export default defineConfig(async (params) => {
     react(),
   ]
 
-  let sourcemap
+  let sourcemap = viteEnv.SKIP_SOURCE_MAP === 'true' ? false : params.mode === 'production'
 
   switch (params.mode) {
     case 'development':
