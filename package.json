@@ -30,7 +30,7 @@
     "circular-dependency-plugin": "^5.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup-plugin-typescript2": "^0.34.0",
+    "rollup-plugin-typescript2": "^0.34.1",
     "rollup-plugin-visualizer": "^5.8.2",
     "styled-components": "^5.3.6",
     "terser": "^5.15.0",
