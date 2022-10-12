@@ -3,7 +3,8 @@
   "version": "3.7.0",
   "description": "Configurations files for frontend repositories",
   "scripts": {
-    "build": "echo all good ; mkdir dist"
+    "build": "echo all good ; mkdir dist",
+    "build-ci": "echo all good ; mkdir dist"
   },
   "repository": {
     "type": "git",
