@@ -14,6 +14,7 @@ export default defineConfig(async (params) => {
 
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
+    'process.env': JSON.stringify({}), // hack to make libraries using process.env work with vitejs
     'import.meta.env.VERSION_BUILD_INFOS': JSON.stringify(viteEnv.VERSION_BUILD_INFOS),
   }
 
