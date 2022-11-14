@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/typedoc",
+  "$schema": "https://typedoc.org/schema.json",
   "excludeExternals": true,
   "excludePrivate": true,
   "hideGenerator": true,
