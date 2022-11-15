@@ -1,9 +1,13 @@
 import { readFileSync } from 'node:fs'
+import { resolve } from 'path'
+import { cwd } from 'process'
 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig((params) => {
+  const workingDir = process.cwd()
+
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
   }
@@ -54,7 +58,7 @@ export default defineConfig((params) => {
     build: {
       emptyOutDir,
       lib: {
-        entry: new URL('src/index.ts', import.meta.url).pathname,
+        entry: resolve(cwd(), 'src/index.ts'),
         fileName: 'index',
         formats: ['cjs', 'es'],
       },
@@ -68,7 +72,7 @@ export default defineConfig((params) => {
     plugins,
     resolve: {
       alias: {
-        '@' : new URL('src', import.meta.url).pathname,
+        '@' : resolve(cwd(), 'src'),
         'querystring': 'qs',
         'polygon-clipping': 'polygon-clipping/dist/polygon-clipping.cjs.js',
       },
