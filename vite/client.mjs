@@ -1,23 +1,19 @@
-import { resolve } from 'path'
-import { cwd, env } from 'process'
-import { defineConfig } from 'vite'
-import { readFileSync } from 'fs'
-import { loadEnv } from 'vite'
-
-import react from '@vitejs/plugin-react'
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+import { cwd, env } from 'node:process'
+import { defineConfig, loadEnv } from 'vite'
 
 import browserslist from '../browserslist.js'
-
 
 export default defineConfig(async (params) => {
   const viteEnv = loadEnv(params.mode, process.cwd(), '')
 
   const define = {
-    'process.env.NODE_ENV': `'${params.mode}'`,
-    'process.env': JSON.stringify({}), // hack to make libraries using process.env work with vitejs
     'import.meta.env.VERSION_BUILD_INFOS': JSON.stringify(viteEnv.VERSION_BUILD_INFOS),
+    'process.env.NODE_ENV': `'${params.mode}'`,
+    // Hack to make libraries using `process.env` work with Vitejs
+    'process.env': JSON.stringify({}), 
   }
-
 
   const dedupe = [
     '@apollo/client',
@@ -33,11 +29,15 @@ export default defineConfig(async (params) => {
     'three',
   ]
 
-  const plugins = [
-    react(),
-  ]
+  const plugins = []
 
-  let sourcemap = viteEnv.SKIP_SOURCE_MAP === 'true' ? false : params.mode === 'production'
+  try {
+    plugins.push((await import('@vitejs/plugin-react-swc')).default())
+  } catch {
+    plugins.push((await import('@vitejs/plugin-react')).default())
+  }
+
+  let sourcemap = false
 
   switch (params.mode) {
     case 'development':
@@ -68,10 +68,11 @@ export default defineConfig(async (params) => {
       break
 
     case 'production':
+      sourcemap = viteEnv.SKIP_SOURCE_MAP !== 'true'
+
       if (viteEnv.DISABLE_LEGACY_PLUGIN !== 'true') {
         try {
-          const { default: legacy } = await import('@vitejs/plugin-legacy')
-          plugins.push(legacy({
+          plugins.push((await import('@vitejs/plugin-legacy')).default({
             ignoreBrowserslistConfig: true,
             targets: browserslist.production,
           }))
@@ -84,9 +85,10 @@ export default defineConfig(async (params) => {
   }
 
   if (viteEnv.ANALYZE === 'true') {
-    const { visualizer } = await import('rollup-plugin-visualizer')
-
-    plugins.push(visualizer({ filename: 'build/stats.html', open: true }))
+    plugins.push((await import('rollup-plugin-visualizer')).visualizer({ 
+      filename: 'build/stats.html', 
+      open: true, 
+    }))
   }
 
   return {

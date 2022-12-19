@@ -24,8 +24,8 @@
     "@habx/ui-core": "^6.20.0",
     "@storybook/addon-essentials": "^6.5.14",
     "@storybook/react": "^6.5.14",
-    "@vitejs/plugin-legacy": "^2.3.1",
-    "@vitejs/plugin-react": "^2.2.0",
+    "@vitejs/plugin-legacy": "^3.0.0",
+    "@vitejs/plugin-react-swc": "^3.0.1",
     "bili": "^5.0.5",
     "browserslist": "^4.21.4",
     "circular-dependency-plugin": "^5.2.2",
@@ -37,13 +37,16 @@
     "terser": "^5.16.1",
     "typedoc": "^0.23.22",
     "typescript": "^4.9.4",
-    "vite": "^3.2.5",
+    "vite": "^4.0.2",
     "vite-plugin-checker": "^0.4.3"
   },
   "peerDependencies": {
     "@habx/ui-core": ">=6 <7",
     "@storybook/addon-essentials": ">=6.2 <7",
     "@storybook/react": ">=6.2 <7",
+    "@vitejs/plugin-legacy": "^3",
+    "@vitejs/plugin-react": "^3",
+    "@vitejs/plugin-react-swc": "^3",
     "bili": "5.x",
     "browserslist": ">=4.16 <5",
     "circular-dependency-plugin": ">=5.2 <5",
@@ -55,7 +58,7 @@
     "terser": ">=5.16.1",
     "typedoc": ">=0.21 <1",
     "typescript": ">=4.3 <5",
-    "vite": ">=v2.7.10 <4",
+    "vite": "^4",
     "vite-plugin-checker": "^0.4.3"
   },
   "peerDependenciesMeta": {
@@ -72,6 +75,9 @@
       "optional": true
     },
     "@vitejs/plugin-react": {
+      "optional": true
+    },
+    "@vitejs/plugin-react-swc": {
       "optional": true
     },
     "bili": {
