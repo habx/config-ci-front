@@ -1,13 +1,10 @@
 import { readFileSync } from 'node:fs'
-import { resolve } from 'path'
-import { cwd } from 'process'
+import { resolve } from 'node:path'
+import { cwd } from 'node:process'
 
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 
 export default defineConfig((params) => {
-  const workingDir = process.cwd()
-
   const define = {
     'process.env.NODE_ENV': `'${params.mode}'`,
   }
@@ -25,12 +22,18 @@ export default defineConfig((params) => {
     'styled-components',
   ]
 
-  const plugins = [
-    react({
-      // https://github.com/alloc/vite-react-jsx/issues/10#issuecomment-1115328902
-      jsxRuntime: 'classic',
-    }),
-  ]
+  const plugins = []
+
+  const reactOptions = {
+    // https://github.com/alloc/vite-react-jsx/issues/10#issuecomment-1115328902
+    jsxRuntime: 'classic',
+  }
+
+  try {
+    plugins.push((await import('@vitejs/plugin-react-swc')).default(reactOptions))
+  } catch {
+    plugins.push((await import('@vitejs/plugin-react')).default(reactOptions))
+  }
 
   const project = JSON.parse(readFileSync('./package.json'))
 
@@ -40,6 +43,7 @@ export default defineConfig((params) => {
   switch (params.mode) {
     case 'development':
       minify = false
+
       try {
         JSON.parse(readFileSync(('./linked-deps.json'))).forEach(dependency =>
           dedupe.push(dependency))
